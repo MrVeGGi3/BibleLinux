@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start": "node server/index.js",
-    "fetch-bibles": "node scripts/fetch-bibles.mjs"
+    "fetch-bibles": "node scripts/fetch-bibles.mjs",
+    "atalho": "bash scripts/instalar-atalho.sh"
   },
   "engines": { "node": ">=18" },
   "dependencies": {

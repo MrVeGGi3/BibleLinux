@@ -48,6 +48,21 @@ recebe o slide que está no ar. Também serve como *Browser Source* no OBS.
 
 Um intervalo explícito (`Jo 3:16-18`) ajusta sozinho a quantidade de versos do slide.
 
+## Atalho no menu de aplicativos
+
+```bash
+npm run atalho
+```
+
+Instala o `BibleLinux` em `~/.local/share/applications/`. Clicar no atalho sobe o servidor
+(se ainda não estiver no ar) e abre o painel no navegador — não é preciso deixar um terminal
+aberto. O clique com o botão direito no ícone traz duas ações: **Abrir tela de projeção** e
+**Parar o servidor**.
+
+O lançador acha o Node do `nvm` sozinho, já que aplicativos gráficos não carregam o `.bashrc`.
+O log do servidor fica em `~/.cache/biblelinux/servidor.log`. Se você mover a pasta do projeto,
+rode `npm run atalho` de novo para atualizar os caminhos.
+
 ## Configuração
 
 | Variável | Padrão | Para quê |
@@ -86,4 +101,6 @@ server/state.js            estado da projeção (o servidor é o dono) e prefer�
 server/index.js            API REST + WebSocket
 public/index.html          painel do operador
 public/projecao.html       tela de projeção
+scripts/biblelinux.sh      lançador usado pelo atalho (sobe o servidor e abre o navegador)
+desktop/                   modelo do .desktop e ícone
 ```

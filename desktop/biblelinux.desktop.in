@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=BibleLinux
+GenericName=Projetor de versículos
+Comment=Projeta versículos bíblicos em uma tela separada, para o culto
+Exec=@RAIZ@/scripts/biblelinux.sh
+Icon=@RAIZ@/desktop/biblelinux.svg
+Terminal=false
+StartupNotify=true
+Categories=Education;
+Keywords=bíblia;versículos;projetor;culto;slide;holyrics;
+Actions=projecao;parar;
+
+[Desktop Action projecao]
+Name=Abrir tela de projeção
+Exec=@RAIZ@/scripts/biblelinux.sh --projecao
+
+[Desktop Action parar]
+Name=Parar o servidor
+Exec=@RAIZ@/scripts/biblelinux.sh --parar

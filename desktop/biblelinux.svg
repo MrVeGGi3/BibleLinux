@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="BibleLinux">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2030"/>
+      <stop offset="1" stop-color="#0b0d12"/>
+    </linearGradient>
+    <linearGradient id="feixe" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#f2c14e" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f2c14e" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="52" fill="url(#fundo)"/>
+
+  <!-- tela -->
+  <rect x="44" y="46" width="168" height="106" rx="12" fill="#0b0d12" stroke="#f2c14e" stroke-width="7"/>
+
+  <!-- livro aberto projetado na tela -->
+  <g fill="none" stroke="#f2f3f7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 78 c-12 -9 -28 -12 -44 -10 v44 c16 -2 32 1 44 10"/>
+    <path d="M128 78 c12 -9 28 -12 44 -10 v44 c-16 -2 -32 1 -44 10"/>
+    <path d="M128 78 v44"/>
+  </g>
+
+  <!-- feixe saindo da base ate a tela -->
+  <path d="M128 204 L58 154 h140 Z" fill="url(#feixe)"/>
+
+  <!-- base do projetor -->
+  <rect x="98" y="202" width="60" height="14" rx="7" fill="#f2c14e"/>
+</svg>

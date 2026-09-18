@@ -150,3 +150,8 @@ O painel é só um cliente da API; dá para automatizar por fora.
 | `GET /api/search?version=&q=&limit=` | busca por palavra |
 | `GET /api/state` | o que está no ar agora |
 | `ws://…/ws` | estado em tempo real: `show`, `next`, `prev`, `blank`, `clear`, `style` |
+
+## Licença
+
+Código sob a licença [MIT](LICENSE). O texto bíblico baixado para `data/` não faz parte deste
+projeto e segue os direitos de cada tradução.

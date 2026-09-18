@@ -4,6 +4,7 @@
   "description": "Projetor de versiculos biblicos com interface web local (estilo Holyrics) para Linux",
   "type": "module",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "start": "node server/index.js",
     "fetch-bibles": "node scripts/fetch-bibles.mjs",

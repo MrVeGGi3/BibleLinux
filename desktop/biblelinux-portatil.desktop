@@ -1,0 +1,23 @@
+[Desktop Entry]
+# Variante usada nas releases: nao depende do caminho onde o projeto foi clonado.
+# Espera o app em ~/.local/share/biblelinux e o icone no tema (hicolor).
+Type=Application
+Version=1.0
+Name=BibleLinux
+GenericName=Projetor de versículos
+Comment=Projeta versículos bíblicos em uma tela separada, para o culto
+Exec=sh -c "exec \\"\\$HOME/.local/share/biblelinux/scripts/biblelinux.sh\\""
+Icon=biblelinux
+Terminal=false
+StartupNotify=true
+Categories=Education;
+Keywords=bíblia;versículos;projetor;culto;slide;holyrics;
+Actions=projecao;parar;
+
+[Desktop Action projecao]
+Name=Abrir tela de projeção
+Exec=sh -c "exec \\"\\$HOME/.local/share/biblelinux/scripts/biblelinux.sh\\" --projecao"
+
+[Desktop Action parar]
+Name=Parar o servidor
+Exec=sh -c "exec \\"\\$HOME/.local/share/biblelinux/scripts/biblelinux.sh\\" --parar"

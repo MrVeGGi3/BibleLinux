@@ -78,6 +78,22 @@ O lançador acha o Node do `nvm` sozinho, já que aplicativos gráficos não car
 O log do servidor fica em `~/.cache/biblelinux/servidor.log`. Se você mover a pasta do projeto,
 rode `npm run atalho` de novo para atualizar os caminhos.
 
+### Instalando pela release
+
+Quem não quer clonar o repositório pode usar os arquivos da
+[última release](https://github.com/MrVeGGi3/BibleLinux/releases/latest):
+
+```bash
+mkdir -p ~/.local/share/biblelinux
+tar -xzf biblelinux-*.tar.gz --strip-components=1 -C ~/.local/share/biblelinux
+install -Dm644 biblelinux.svg ~/.local/share/icons/hicolor/scalable/apps/biblelinux.svg
+install -Dm644 biblelinux.desktop ~/.local/share/applications/biblelinux.desktop
+```
+
+O `biblelinux.desktop` da release não depende de onde o projeto está: ele procura o app em
+`~/.local/share/biblelinux`. Na primeira vez que você clicar no ícone, o próprio lançador
+instala as dependências e baixa o texto bíblico.
+
 ## Configuração
 
 | Variável | Padrão | Para quê |

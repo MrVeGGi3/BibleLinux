@@ -1,0 +1,16 @@
+{
+  "name": "biblelinux",
+  "version": "1.0.0",
+  "description": "Projetor de versiculos biblicos com interface web local (estilo Holyrics) para Linux",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "fetch-bibles": "node scripts/fetch-bibles.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

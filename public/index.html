@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BibleLinux — painel</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/css/painel.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <div class="marca">BibleLinux</div>
+
+      <label class="campo">
+        <span>Versão</span>
+        <select id="versao"></select>
+      </label>
+
+      <label class="campo">
+        <span>Versos por slide</span>
+        <select id="porSlide"></select>
+      </label>
+
+      <form class="campo" id="formRef" autocomplete="off">
+        <span>Referência</span>
+        <input id="ref" type="text" placeholder="Jo 3:16-18" />
+      </form>
+
+      <form class="campo" id="formBusca" autocomplete="off">
+        <span>Buscar palavra</span>
+        <input id="busca" type="search" placeholder="graça" />
+      </form>
+
+      <a class="botao secundario" href="/projecao" target="_blank" rel="noopener">Abrir projeção ↗</a>
+      <span id="status" class="status" data-status="offline">conectando…</span>
+    </header>
+
+    <main>
+      <section class="navegacao">
+        <div class="barra-nav">
+          <nav id="trilha" class="trilha"></nav>
+          <input id="filtro" type="search" placeholder="Filtrar livro…" />
+        </div>
+        <div id="conteudo" class="conteudo"></div>
+      </section>
+
+      <aside class="palco">
+        <h2 class="titulo-secao">No ar</h2>
+        <div id="preview" class="preview vazio">
+          <p class="preview-vazio">Nada sendo projetado.</p>
+        </div>
+
+        <div class="controles">
+          <button id="btnAnterior" class="botao" title="Seta esquerda">◀ Anterior</button>
+          <button id="btnProjetar" class="botao primario" title="Enter">Projetar</button>
+          <button id="btnProximo" class="botao" title="Seta direita ou espaço">Próximo ▶</button>
+          <button id="btnPreta" class="botao" title="Tecla B">Tela preta</button>
+          <button id="btnLimpar" class="botao" title="Esc">Limpar</button>
+        </div>
+
+        <details class="aparencia">
+          <summary>Aparência do slide</summary>
+          <div class="grade-form">
+            <label>
+              <span>Tamanho da fonte <b id="valorFonte">100%</b></span>
+              <input id="fontScale" type="range" min="0.5" max="2" step="0.05" />
+            </label>
+            <label>
+              <span>Fonte</span>
+              <select id="fontFamily">
+                <option value="Georgia, 'Times New Roman', serif">Serifada (Georgia)</option>
+                <option value="system-ui, 'Segoe UI', Roboto, sans-serif">Sem serifa (sistema)</option>
+                <option value="'DejaVu Sans', Verdana, sans-serif">DejaVu Sans</option>
+                <option value="'Liberation Serif', Georgia, serif">Liberation Serif</option>
+              </select>
+            </label>
+            <label><span>Cor do texto</span><input id="textColor" type="color" /></label>
+            <label><span>Cor do fundo</span><input id="bgColor" type="color" /></label>
+            <label><span>Cor da referência</span><input id="referenceColor" type="color" /></label>
+            <label>
+              <span>Alinhamento</span>
+              <select id="align">
+                <option value="center">Centralizado</option>
+                <option value="left">À esquerda</option>
+                <option value="justify">Justificado</option>
+              </select>
+            </label>
+            <label class="inline"><input id="showReference" type="checkbox" /><span>Mostrar referência</span></label>
+            <label class="inline"><input id="showVerseNumbers" type="checkbox" /><span>Mostrar número do verso</span></label>
+            <label class="inline"><input id="uppercaseReference" type="checkbox" /><span>Referência em maiúsculas</span></label>
+            <button id="btnPadrao" class="botao secundario">Restaurar padrão</button>
+          </div>
+        </details>
+
+        <p class="atalhos">
+          <b>Atalhos:</b> ← → ou espaço mudam o slide · <b>B</b> tela preta · <b>Esc</b> limpa ·
+          <b>/</b> vai para a busca
+        </p>
+      </aside>
+    </main>
+
+    <div id="aviso" class="aviso" hidden></div>
+    <script type="module" src="/js/painel.js"></script>
+  </body>
+</html>

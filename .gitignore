@@ -1,0 +1,5 @@
+node_modules/
+
+# Texto biblico e preferencias sao gerados localmente (npm run fetch-bibles)
+data/*.json
+!data/.gitkeep

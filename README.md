@@ -15,7 +15,32 @@ no espírito do Holyrics: você escolhe o trecho num painel e ele aparece na tel
 
 ## Instalação
 
-Precisa de [Node.js](https://nodejs.org) 18 ou mais novo.
+Uma linha só, sem `sudo` e sem precisar ter o Node instalado:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/MrVeGGi3/BibleLinux/main/install.sh | bash
+```
+
+O instalador baixa o [Node.js](https://nodejs.org) 22 LTS oficial (conferindo o SHA-256) só para
+o BibleLinux, sem mexer no Node do sistema, e deixa tudo em `~/.local/share/biblelinux`: o app,
+as dependências, o texto bíblico e o atalho no menu de aplicativos. Rodar de novo atualiza o app
+e o Node, mantendo as preferências e as Bíblias já baixadas.
+
+Para remover:
+
+```bash
+bash ~/.local/share/biblelinux/install.sh --desinstalar
+```
+
+| Variável | Padrão | Para quê |
+|---|---|---|
+| `NODE_MAJOR` | `22` | linha do Node a instalar |
+| `BIBLELINUX_REF` | `main` | branch ou tag do GitHub a instalar |
+
+### Instalando a partir do código
+
+Para desenvolver, clone e use o seu próprio [Node.js](https://nodejs.org) 18 ou mais novo
+(ou rode `bash install.sh` no clone para instalar a cópia local com o Node embutido):
 
 ```bash
 git clone https://github.com/MrVeGGi3/BibleLinux.git
@@ -74,13 +99,15 @@ Instala o `BibleLinux` em `~/.local/share/applications/`. Clicar no atalho sobe 
 aberto. O clique com o botão direito no ícone traz duas ações: **Abrir tela de projeção** e
 **Parar o servidor**.
 
-O lançador acha o Node do `nvm` sozinho, já que aplicativos gráficos não carregam o `.bashrc`.
+O lançador usa o Node embutido pelo `install.sh` quando ele existe; senão, acha o do sistema
+ou o do `nvm` sozinho, já que aplicativos gráficos não carregam o `.bashrc`.
 O log do servidor fica em `~/.cache/biblelinux/servidor.log`. Se você mover a pasta do projeto,
 rode `npm run atalho` de novo para atualizar os caminhos.
 
 ### Instalando pela release
 
-Quem não quer clonar o repositório pode usar os arquivos da
+O `install.sh` acima é o caminho mais simples. Quem já tem Node 18+ e prefere não usá-lo pode
+instalar com os arquivos da
 [última release](https://github.com/MrVeGGi3/BibleLinux/releases/latest):
 
 ```bash
@@ -132,6 +159,7 @@ server/state.js            estado da projeção (o servidor é o dono) e prefer�
 server/index.js            API REST + WebSocket
 public/index.html          painel do operador
 public/projecao.html       tela de projeção
+install.sh                 instalador com Node embutido (curl | bash)
 scripts/biblelinux.sh      lançador usado pelo atalho (sobe o servidor e abre o navegador)
 desktop/                   modelo do .desktop e ícone
 ```

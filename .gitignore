@@ -1,4 +1,6 @@
 node_modules/
+# Node embutido pelo install.sh
+/node/
 
 # Texto biblico e preferencias sao gerados localmente (npm run fetch-bibles)
 data/*.json

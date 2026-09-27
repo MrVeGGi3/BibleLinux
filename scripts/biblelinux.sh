@@ -27,8 +27,13 @@ avisar() {
   fi
 }
 
-# O Node instalado pelo nvm nao esta no PATH de aplicativos graficos.
+# Prefere o Node embutido pelo install.sh; senao, o do sistema. O Node
+# instalado pelo nvm nao esta no PATH de aplicativos graficos.
 preparar_node() {
+  if [ -x "$RAIZ/node/bin/node" ]; then
+    PATH="$RAIZ/node/bin:$PATH" && export PATH
+    return 0
+  fi
   command -v node >/dev/null 2>&1 && return 0
   if [ -s "$HOME/.nvm/nvm.sh" ]; then
     # shellcheck disable=SC1091
@@ -76,7 +81,7 @@ subir() {
   no_ar && return 0
 
   preparar_node || {
-    avisar "BibleLinux nao abriu" "Node.js nao encontrado. Instale o Node 18 ou mais novo."
+    avisar "BibleLinux nao abriu" "Node.js nao encontrado. Rode o install.sh do BibleLinux ou instale o Node 18 ou mais novo."
     exit 1
   }
 
